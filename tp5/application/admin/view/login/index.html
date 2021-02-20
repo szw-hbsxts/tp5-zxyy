@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="/static/uikit/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="/static/uikit/js/uikit.min.js"></script>
+    <script src="/static/uikit/js/uikit-icons.min.js"></script>
+    <!--jquery-->
+    <script src="/static/js/jquery-3.5.1.min.js"></script>
+    <script src="/static/admin/js/public.js"></script>
+    <style>
+        @keyframes show {  
+            0% {opacity: 0;}/*初始状态 透明度为0*/  
+            50% {opacity: 0.5;}/*过渡状态 透明度为0.4*/  
+            100% {opacity: 1;}/*结束状态 透明度为1*/  
+        }  
+        @-webkit-keyframes show {/*针对webkit内核*/  
+            0% {opacity: 0;}  
+            50% {opacity: 0.5;}  
+            100% {opacity: 1;}  
+        }
+        body{
+            height: 100%;
+        }
+        .bg_lan{
+            width: 100%;
+            height: 100%;
+            background: #1E9FFF;
+        }
+        .center_login{
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 5px 5px 20px #444444;
+            box-sizing: border-box;
+        }
+        span.title {
+            display: block;
+            line-height: 36px;
+            border-bottom: 1px solid #e2e2e2;
+            padding-bottom: 15px;
+            font-size: 24px;
+        }
+        .uk-inline{
+            width: 100%;
+        }
+        .login_submit{
+            display: block;
+            margin: auto;
+            width: 50%;
+            max-width: 200px;
+        }
+        .login_yzm{
+            overflow: hidden;
+        }
+        .login_yzm label{
+            width: auto;
+            float: left;
+            line-height: 40px;
+        }
+        .login_yzm input{
+            margin-left: 0;
+            float: left;
+            height: 40px;
+            box-sizing: border-box;
+            width: 20%;
+            max-width: 100px;
+        }
+        .login_img {
+            float: right;
+        }
+        .ts_ldjsikjds{
+            display: none;
+            background-color: #444444;
+            color: #ffffff;
+            height: 50px;
+            width: 50%;
+            max-width: 200px;
+            line-height: 50px;
+            z-index: 99;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px #444444;
+        }
+
+        .show_ts{
+            display: block;
+            animation: show;/*动画名称*/  
+            animation-duration: 1s;/*动画持续时间*/  
+            -webkit-animation:show 1s;/*针对webkit内核*/  
+        }
+
+    </style>
+</head>
+<body>
+    <div class="uk-position-center ts_ldjsikjds">Center</div>
+    <div class="bg_lan uk-position-center uk-overlay uk-overlay-default">
+        <div class="uk-position-center uk-overlay uk-overlay-default center_login">
+            <form method="post">
+                <div class="uk-margin">
+                    <span class="title">{$title}--后台管理系统</span>
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <a class="uk-form-icon" href="#" uk-icon="icon: user"></a>
+                        <input class="uk-input" id="name" name="name" type="text" placeholder="用户名">
+                    </div>
+                </div>      
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: lock"></a>
+                        <input class="uk-input" id="password" name="password" type="text" placeholder="密码">
+                    </div>
+                </div>
+
+                <div class="uk-margin login_yzm">
+                    <label for="form-horizontal-text">验证码：</label>
+                    <input name="yzm" id="yzm" class="uk-input" type="text">
+                    <div class="login_img">
+                        <img src="{:url('verification/index')}" alt="captcha" id="captcha" />
+                    </div>
+                </div>
+
+                <button class="uk-button uk-button-primary login_submit">登入</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

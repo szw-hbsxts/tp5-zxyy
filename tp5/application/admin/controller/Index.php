@@ -1,11 +1,14 @@
 <?php
 namespace app\admin\controller;
-
-class Index
+class Index extends Decide
 {
     public function index()
     {
-        return '你好';
+        // 模板变量赋值
+        $this->assign('title','后台管理系统--首页');
+
+        // 模板输出
+        return $this->fetch('index');
     }
 
     public function hello($name = 'ThinkPHP5')
