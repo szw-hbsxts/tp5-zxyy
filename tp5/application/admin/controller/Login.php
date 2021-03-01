@@ -11,8 +11,12 @@ class Login extends Controller
 {
     public function index()
     {
+        $ds = Session::has('name');
+        if($ds){
+             $this->error('已经登录！',url('/admin/index'));
+        }
         // 模板变量赋值
-        $this->assign('title','ThinkPHP');
+        $this->assign('title','Thinkphp');
 
         // 模板输出
         return $this->fetch('index');

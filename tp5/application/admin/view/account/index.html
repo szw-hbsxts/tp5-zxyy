@@ -1,0 +1,41 @@
+{extend name="public/base" /}
+
+{block name="body"}
+<!-- 内容主体区域 -->
+<div class="acc_dsd">
+	<p class="layui-elem-quote bt">个人信息</p>  
+	<table class="layui-table gr_xx">
+	  <tbody>
+	    <tr>
+	      <td>用户名：</td>
+	      <td>{$data.name}</td>
+	    </tr>
+	    <tr>
+	      <td>昵称：</td>
+	      <td>{$data.username}</td>
+	   	</tr>
+	    <tr>
+	      <td>状态：</td>
+	      <td>
+			{eq name="data.status" value="0"}
+			正常
+			{else/}
+			关闭
+			{/eq}
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>所属权限：</td>
+	      <td>{$qln}</td>
+	    </tr>
+	    <tr>
+	      <td>创建时间：</td>
+	      <td>{$data.addtime}</td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
+<!-- 内容主体区域 -->
+
+
+{/block}

@@ -1,0 +1,52 @@
+{extend name="public/base" /}
+
+{block name="body"}
+<!-- 内容主体区域 -->
+<div class="acc_all">
+	<p class="layui-elem-quote bt">用户信息</p>  
+	<table class="layui-table">
+	  <colgroup>
+	    <col width="150">
+	    <col width="200">
+	    <col>
+	  </colgroup>
+	  <thead>
+	    <tr>
+	      <th>编号</th>
+	      <th>用户名</th>
+	      <th>昵称</th>
+	      <th>状态</th>
+	      <th>权限</th>
+	      <th>创建时间</th>
+	      <th>操作</th>
+	    </tr> 
+	  </thead>
+	  <tbody>
+		{volist name="all_list" id="vo"}
+			<tr>
+			  <td>{$vo.id}</td>
+		      <td>{$vo.name}</td>
+		      <td>{$vo.username}</td>
+		      <td>
+					{eq name="vo.status" value="0"}
+					正常
+					{else/}
+					关闭
+					{/eq}
+			  </td>
+		      <td>{$vo.zy}</td>
+		      <td>{$vo.addtime}</td>
+		      <td>
+				<a href="{:url('account/detail')}?id={$vo.id}" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+				<a href="{:url('account/edit')}?id={$vo.id}" class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+				<a href="{:url('account/del')}?id={$vo.id}" class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+		      </td>
+		    </tr>
+		{/volist}
+	  </tbody>
+	</table>
+</div>
+<!-- 内容主体区域 -->
+
+
+{/block}
