@@ -5,6 +5,7 @@ class Index
 {
     public function index()
     {
-        return '<h1>年度符合基本上大</h1>';
+       // 渲染默认模板输出
+        return view();
     }
 }
